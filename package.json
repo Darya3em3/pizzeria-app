@@ -1,0 +1,29 @@
+{
+  "name": "pizzeria-app",
+  "version": "1.0.0",
+  "description": "Приложение пиццерии",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "firebase deploy",
+    "dev": "webpack serve --mode=development",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "private": true,
+  "author": "em000303@g.bstu.by",
+  "devDependencies": {
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.8.1",
+    "html-webpack-plugin": "^5.5.3",
+    "mini-css-extract-plugin": "^2.7.6",
+    "sass": "^1.68.0",
+    "sass-loader": "^13.3.2",
+    "ts-loader": "^9.4.4",
+    "typescript": "^5.2.2",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  }
+}
