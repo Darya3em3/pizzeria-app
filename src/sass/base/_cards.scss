@@ -111,3 +111,27 @@
   width: 900px;
   height: 600px;
 }
+
+//cardrecord
+.cardrecord {
+  color: black;
+}
+
+.admin__user {
+  color: black;
+  margin: 10px;
+}
+
+.admin__name {
+  font-weight: 800;
+}
+
+.cardrecord {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  margin: 5px;
+}

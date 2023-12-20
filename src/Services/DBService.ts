@@ -6,7 +6,7 @@ import { getDownloadURL, getStorage, ref } from "firebase/storage";
 import { TCriteria, TDataBasket, TDataGraph, TDataHistory, TDataUser, TGood, TGoodBasket } from "../Abstract/Type";
 
 export class DBService extends Observer {
-  private db: Firestore = getFirestore(this.DBFirestore);
+  public db: Firestore = getFirestore(this.DBFirestore);
 
   dataUser: TDataUser | null = null;
 
@@ -225,5 +225,22 @@ export class DBService extends Observer {
     return sortData.sort(
       (a, b) => a.x.getMilliseconds() - b.x.getMilliseconds()
     );
+  }
+  async getUserHistoryData(): Promise<TDataHistory[]> {
+    const usersQuerySnapshot = await getDocs(collection(this.db, 'users'));
+    const result: TDataHistory[] = [];
+
+    for (const userDoc of usersQuerySnapshot.docs) {
+      const historyCollectionRef = collection(userDoc.ref, 'history');
+      const historyQuerySnapshot = await getDocs(historyCollectionRef);
+
+      console.log(`Данные пользователя с ID ${userDoc.id}:`);
+      historyQuerySnapshot.forEach((historyDoc) => {
+        const historyData = historyDoc.data() as TDataHistory;
+        result.push(historyData);
+      });
+    }
+
+    return result;
   }
 }
