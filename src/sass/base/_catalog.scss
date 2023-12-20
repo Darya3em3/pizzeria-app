@@ -1,0 +1,94 @@
+.page__title {
+  text-align: center;
+  margin: 30px;
+  font-family: Nunito;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 600;
+  color: black;
+}
+
+button,
+input {
+  border: none;
+  cursor: pointer;
+}
+
+.catalog__btn {
+  padding: 5px 15px;
+  border-radius: 55px;
+  font-family: Nunito;
+  font-size: 16px;
+  margin: 10px;
+}
+
+.catalog__buttons {
+  justify-content: center;
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.catalog__pizzas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.catalog__content {
+  display: flex;
+  padding: 30px;
+}
+
+
+
+//Basket
+.basket__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  color: black;
+}
+
+.basket__lenght {
+  font-size: 12px;
+  font-weight: 400;
+  padding: 5px 10px;
+  background: #F2F2F3;
+  border-radius: 5px;
+}
+
+.total__basket-inner {
+  display: flex;
+  justify-content: space-between;
+  color: black;
+}
+
+.basket {
+  background: white;
+  padding: 15px;
+  margin: 30px;
+  border-radius: 20px;
+}
+
+.basket__column {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding: 15px;
+  margin: 30px;
+  border-radius: 20px;
+  width: 700px;
+}
+
+.basket__oplata {
+  color: #FFF;
+  font-family: Nunito;
+  font-size: 16px;
+  border-radius: 12px;
+  background: #FF7020;
+  padding: 15px;
+  margin-top: 20px;
+}

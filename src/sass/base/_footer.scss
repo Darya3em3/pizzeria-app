@@ -1,57 +1,82 @@
 .footer {
-    background-color: rgba(255,255,255);
-    color: black;
-    padding-top: 20px;
+  background-color: rgba(255, 255, 255);
+  color: black;
+  padding-top: 20px;
+  font-size: 24px;
+}
+
+
+.icons__footer {
+  margin-right: 10px;
+  justify-content: space-between;
+}
+
+.footer__li {
+  margin-top: 10px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+
+  a {
     font-size: 24px;
-  }
-
-
-  .icons__footer {
-    margin-right: 10px;
-    justify-content: space-between;
-  }
-  
-  .footer__li {
-    margin-top: 10px;
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-
-    a {
-      font-size: 24px;
-      text-decoration: none;
-      color: black;
-      padding-bottom: 10px;
-     
-    }
-  }
-  
-  .contacts__inner {
-    margin-bottom: 10px;
-  }
-
-  .footer__inner {
-    display: flex;
-    justify-content: space-between;
-  }
-  h1{
     text-decoration: none;
-    color: rgba(255, 112, 32);
-    font-size: 24px;  
-    }
-  
-  .ssik__inner {
-    font-size: 24px;
-    margin-top: 64px;
+    color: black;
     padding-bottom: 10px;
+
   }
-  
-  .ssik__li {
-    //display: flex;
-    justify-content: space-between;
-  
-    a {
-      text-decoration: none;
-      color: black;
-    }
+}
+
+.contacts__inner {
+  margin-bottom: 10px;
+}
+
+.footer__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  text-decoration: none;
+  color: rgba(255, 112, 32);
+  font-size: 24px;
+}
+
+.ssik__inner {
+  font-size: 24px;
+  margin-top: 64px;
+  padding-bottom: 10px;
+}
+
+.ssik__li {
+  //display: flex;
+  justify-content: space-between;
+
+  a {
+    text-decoration: none;
+    color: black;
   }
+}
+
+.footer__logo {
+  display: flex;
+  align-items: center;
+  color: #FF7020;
+  font-family: Nunito;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 800;
+  gap: 10px;
+}
+
+.footer__contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 24px;
+
+  p:last-child {
+    font-size: 16px;
+
+  }
+}

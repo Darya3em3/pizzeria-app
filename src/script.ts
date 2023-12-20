@@ -1,39 +1,65 @@
-import { Component } from './Abstract/Component';
-import { Footer } from './Common/Footer';
-import { Header } from './Common/Header';
-import { MainPage } from './Pages/MainPage';
 import './style.scss';
+
+import './style.scss';
+import { Component } from './Abstract/Component';
+import { Router } from './Common/Router';
+import { Header } from './Common/Header';
+import { Footer } from './Common/Footer';
+import { MainPage } from './Pages/MainPage';
+import { Catalog } from './Pages/Catalog';
+import { Account } from './Pages/Account';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { initializeApp } from 'firebase/app';
+import { firebaseConfig } from '../configFB';
+import { AuthService } from './Services/AuthService';
+import { LogicService } from './Services/LogicService';
+import { getFirestore } from 'firebase/firestore';
+import { DBService } from './Services/DBService';
 
 const body = document.body;
 
+const DBFirestore = initializeApp(firebaseConfig);
+const db = getFirestore(DBFirestore);
+
+const services = {
+  authService: new AuthService(),
+  logicService: new LogicService(),
+  dbService: new DBService(DBFirestore)
+};
+
 class App {
-    constructor(parrent: HTMLElement) {
-      const wrap = new Component(body, 'div', ["wrapper"]);
-      new Header(wrap.root);
-      new MainPage(wrap.root);
-      new Footer(wrap.root);
-    }
+  constructor(parrent: HTMLElement) {
+    const wrap = new Component(parrent, 'div', ["wrapper"]);
+    new Header(wrap.root, services);
+    const main = new Component(wrap.root, "main");
+
+    const links = {
+      "#": new MainPage(main.root, services),
+      "#catalog": new Catalog(main.root, services),
+      "#account": new Account(main.root, services),
+    };
+
+    new Router(links, services);
+    new Footer(wrap.root);
+
   }
-  
-  declare global {
-    interface Window {
-      app: App;
-    }
+}
+declare global {
+  interface Window {
+    app: App;
   }
-  window.app = new App(document.body);
+}
 
+const auth = getAuth();
+onAuthStateChanged(auth, (user) => {
+  services.authService.user = user;
+  services.dbService
+    .getDataUser(user)
+    .then(() => {
+      if (!window.app) window.app = new App(document.body);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+})
 
-/*import "./style.scss";*/
-/*import { Component } from "./Abstract/Component";*/
-/*
-const addButton = new Component(body, "button", null, "Отобразить");
-const removeButton = new Component(body, "button", null, "Удалить");
-const paragraph = new Component(body, "p", null, "Это параграф.");
-
-addButton.root.addEventListener("click", () => {
-    paragraph.render();
-});
-
-removeButton.root.addEventListener("click", () => {
-    paragraph.remove();
-});*/

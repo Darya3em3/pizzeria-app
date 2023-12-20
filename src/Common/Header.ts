@@ -1,4 +1,5 @@
 import { Component } from "../Abstract/Component";
+import { TServices } from "../Abstract/Type";
 //первоначально было
 /*export class Header extends Component {
   constructor(parrent: HTMLElement) {
@@ -27,7 +28,7 @@ import { Component } from "../Abstract/Component";
 
 
 export class Header extends Component {
-  constructor(parrent: HTMLElement) {
+  constructor(parrent: HTMLElement, private services: TServices) {
     super(parrent, "div", ["header"]);
     const header = new Component(this.root, 'header', ["header"]);
     const container = new Component(header.root, 'div', ["container"]);
@@ -35,20 +36,24 @@ export class Header extends Component {
 
 
     const header__nav = new Component(header__inner.root, "nav", ["header__nav"]);
-    new Component(header__nav.root, "a", null, "pizzeria", ["href"], ["#"]);
-    new Component(header__nav.root, 'img', ["icons"], null, ["src", "alt"], ["./assets/Icons/logo.svg", "logo"]);
-    new Component(header__nav.root, 'img', ["icons"], null, ["src", "alt"], ["./assets/Icons/Account.svg", "account"]);
-    new Component(header__nav.root, "a", null, "Аккаунт", ["href"], ["#"]);
-   // new Component(header__nav.root, 'a', null, null, ["src", "alt"], ["./assets/Icons/p.png", 'p']);
-    
+    const main = new Component(header__nav.root, 'a', ['header__main'], 'pizzeria', ['href'], ['#']);
+    new Component(main.root, 'img', [], null, ['src', 'alt'], ['./assets/Icons/logo.svg', 'logo']);
+    const account = new Component(header__nav.root, 'a', ['header__main'], 'Аккаунт', ['href'], ['#account']);
+    new Component(account.root, 'img', [], null, ['src', 'alt'], ['./assets/Icons/Account.svg', 'account']);
+    // const main = new Component(header__nav.root, "a", null, "pizzeria", ["href"], ["#"]);
+    // new Component(main.root, 'img', ["icons"], null, ["src", "alt"], ["./assets/Icons/logo.svg", "logo"]);
+    // const account = new Component(header__nav.root, 'img', ["icons"], null, ["src", "alt"], ["./assets/Icons/Account.svg", "account"]);
+    // new Component(account.root, "a", null, "Аккаунт", ["href"], ["#account"]);
+    // new Component(header__nav.root, 'a', null, null, ["src", "alt"], ["./assets/Icons/p.png", 'p']);
 
 
-    new Component(header__inner.root, 'h4', ["h4"], 'Доставка пиццы');
-    new Component(header__inner.root, 'h2', ["h2"], '<br>11:00 - 23:00');
-    new Component(header__inner.root, 'img', ["iconsp"], null, ["src", "alt"], ["./assets/Icons/pnov.png", 'p']);
- 
+    const divHeader = new Component(header__inner.root, 'div', ['header__row']);
+    new Component(divHeader.root, 'img', ["iconsp"], null, ["src", "alt"], ["./assets/Icons/pnov.png", 'p']);
 
+    const text = new Component(divHeader.root, 'div', ['header__column']);
 
-    new Component(header__inner.root, 'h3', ["h3"], 'У нас предоставляется бесплатная доставка.');
+    new Component(text.root, 'h4', ["h4", 'bold'], 'Доставка пиццы');
+    new Component(text.root, 'h2', ["h2", 'bold'], '11:00 - 23:00');
+    new Component(text.root, 'h3', ["h3"], 'У нас предоставляется бесплатная доставка.');
   }
 }

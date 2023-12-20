@@ -1,84 +1,76 @@
 .header {
-    background-color: rgba(255, 171, 8, 1);
-  }
-  
- /*.header__inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 13px 0 13px 0;
-  
-  }*/
-  .header__nav{
-   /* display: flex;
-    align-items: center;
+  background-color: rgba(255, 171, 8, 1);
+}
+
+.header__nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 13px 0;
+  align-items: center;
+}
+
+.header__main {
+  display: flex;
+  align-items: center;
+  color: #FFF;
+  text-decoration: none;
+  font-weight: 800;
+  font-family: Nunito;
+  font-size: 25px;
+  gap: 10px;
+}
+
+
+
+.icons {
+  padding-left: 300px;
+
+}
+
+.iconsp {
+  width: 233px;
+  height: 266px;
+
+}
+
+
+.icon3 {
+  width: 289px;
+  height: 345px;
+
+}
+
+
+h3 {
+  color: rgb(255, 255, 255);
+  left: 338px;
+  height: 123px;
+  font-weight: Bold;
+  font-weight: 400;
+  font-size: 16px;
+  // display: flex;
+  //justify-content: space-between;
+}
+
+h2 {
+  // color: rgb(255, 255, 255);
+  color: rgb(255, 92, 0);
+  font-size: 50px;
+  left: 675px;
+  height: 123px;
+  font-weight: 800;
+  /* display: flex;
     justify-content: space-between;*/
-    padding: 13px 0 13px 0;
-  
-  }
- 
-  .header__nav {
-   // display: flex;
-  
-    a {
-      text-decoration: none;
-      color: rgb(255, 255, 255);
-      padding-left: 50px;
-      padding-right: 50px;
-    }
-  }
-  
-  .icons {
-    padding-left: 300px;
 
-  }
+}
 
-  .iconsp {
-    width: 233px;
-    height: 266px;
- 
-   }
- 
-
-  .icon3 {
-   width: 289px;
-   height: 345px;
-
-  }
-
-
-  h3{
-    color: rgb(255, 255, 255);
-    left: 338px;
-    height: 123px;
-    font-weight: Bold;
-    font-weight: 400;
-    font-size: 16px;
-   // display: flex;
-    //justify-content: space-between;
-   }
- 
-   h2{
-   // color: rgb(255, 255, 255);
-   color:rgb(255,92,0);
-   font-size:50px;
-    left: 675px;
-    height: 123px;
-    font-weight: 800;
-   /* display: flex;
-    justify-content: space-between;*/
- 
-   }
-
-   h4{
-    color:rgb(255, 255, 255);
-     left: 675px;
-    // height: 123px;
-     font-weight: 800;
-     font-size:50px;
-    /* display: flex;
+h4 {
+  color: rgb(255, 255, 255);
+  left: 675px;
+  // height: 123px;
+  font-weight: 800;
+  font-size: 50px;
+  /* display: flex;
      justify-content: space-between;*/
-  
-    }
- 
-    
+
+}

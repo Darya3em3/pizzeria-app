@@ -1,0 +1,25 @@
+.authorization {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.auth__btn {
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  padding: 10px 20px;
+  border-radius: 15px;
+  margin: 30px;
+}
+
+.header__row {
+  display: flex;
+  margin: auto;
+  margin-left: 100px;
+}
+
+.bold {
+  font-weight: 800;
+}
